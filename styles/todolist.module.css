@@ -1,0 +1,155 @@
+.container {
+  @apply mx-auto px-4 max-w-7xl;
+}
+
+.header {
+  @apply flex items-center justify-between py-4 lg:py-16;
+}
+
+.title {
+  @apply lg:text-4xl font-bold;
+}
+
+.primaryBtn {
+  @apply flex space-x-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+}
+
+.cancelBtn {
+  @apply inline-flex h-10 w-full items-center justify-center gap-2 whitespace-nowrap rounded bg-red-500 px-5 text-sm font-medium tracking-wide text-white transition duration-300 hover:bg-red-600 focus:bg-red-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-red-300 disabled:bg-red-300 disabled:shadow-none;
+}
+
+.warningBtn {
+  @apply inline-flex h-10 flex-1 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded bg-yellow-50 px-5 text-sm font-medium tracking-wide text-yellow-500 transition duration-300 hover:bg-yellow-100 hover:text-yellow-600 focus:bg-yellow-200 focus:text-yellow-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-yellow-300 disabled:bg-yellow-100 disabled:text-yellow-400 disabled:shadow-none;
+}
+
+.submitBtn {
+  @apply inline-flex h-10 w-full items-center justify-center gap-2 whitespace-nowrap rounded bg-emerald-500 px-5 text-sm font-medium tracking-wide text-white transition duration-300 hover:bg-emerald-600 focus:bg-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none;
+}
+
+.main {
+  @apply flex flex-col items-center justify-start flex-1 lg:px-20 text-center min-h-[calc(100vh-8rem)] sm:min-h-[calc(100vh-18rem)];
+}
+
+.card {
+  @apply max-w-full w-full h-full;
+}
+
+.cardContent {
+  @apply flex w-full h-full items-start justify-start rounded-md lg:rounded-xl bg-white dark:bg-[#111111] sm:p-8 shadow-xl ring-1 ring-wuiSlate-200 lg:p-16 overflow-hidden min-h-[calc(100vh-10rem)] sm:min-h-[calc(100vh-20rem)];
+}
+
+.ring-wuiSlate-200 {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(226 232 240/var(--tw-ring-opacity));
+}
+
+.footer {
+  @apply flex justify-center items-center flex-1 py-8 px-0 border-t border-[#eaeaea];
+}
+
+.modalContainer {
+  @apply fixed inset-0 z-[999] flex h-full w-full items-center justify-center bg-opacity-20 px-3 transition-all;
+}
+
+.modal {
+  @apply relative mx-auto w-full overflow-hidden rounded-3xl bg-white dark:bg-[#111111];
+}
+
+.input {
+  @apply relative h-10 w-full rounded border border-slate-200 px-4 text-sm text-slate-500 placeholder-transparent outline-none transition-all autofill:bg-white invalid:border-pink-500 invalid:text-pink-500 focus:border-emerald-500 focus:outline-none invalid:focus:border-pink-500 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400;
+}
+
+.inputLabel {
+  @apply absolute left-2 -top-2 z-[1] px-2 text-xs text-slate-400 transition-all before:absolute before:top-0 before:left-0 before:z-[-1] before:block before:h-full before:w-full before:bg-white dark:before:bg-[#111111] before:transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-sm peer-required:after:text-pink-500 peer-required:after:content-['\00a0*'] peer-invalid:text-pink-500 peer-focus:-top-2 peer-focus:text-xs peer-focus:text-emerald-500 peer-invalid:peer-focus:text-pink-500 peer-disabled:cursor-not-allowed peer-disabled:text-slate-400 peer-disabled:before:bg-transparent;
+}
+
+.error {
+  @apply text-red-500 text-sm py-2;
+}
+
+.buttonContainer {
+  @apply flex flex-col md:flex-row gap-4 justify-end p-6;
+}
+
+.table {
+  @apply w-full text-left border border-separate rounded border-slate-200;
+}
+
+.tbody {
+  @apply bg-white dark:bg-[#111111] table-row-group;
+}
+
+.tr {
+  @apply transition-colors duration-300 hover:bg-slate-50;
+}
+
+.th {
+  @apply px-6 py-1 text-sm font-medium border-l first:border-l-0 stroke-slate-700 text-slate-700 bg-slate-100 capitalize;
+}
+
+.td {
+  @apply px-6 py-2 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 table-cell;
+}
+
+.dialogTitle {
+  @apply text-xl font-medium text-slate-700;
+}
+
+.dialogContent {
+  @apply flex flex-col space-y-6;
+}
+
+.dialogFooter {
+  @apply flex justify-end gap-2 mt-12 pt-0;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  color: #0070f3;
+  border-color: #0070f3;
+}
+
+.card h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.logo {
+  height: 1em;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .card,
+  .footer {
+    border-color: #222;
+  }
+  .code {
+    background: #111;
+  }
+  .logo img {
+    filter: invert(1);
+  }
+}
