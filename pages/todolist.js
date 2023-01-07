@@ -138,7 +138,7 @@ const TodoList = () => {
                         <div className="flex flex-col space-y-6">
 
                             <div className="relative">
-                                <Field id="name" type="text" name="name" placeholder="Nom" className={`peer ${styles.input}`} />
+                                <Field id="name" type="text" name="name" placeholder="Nom" className={`${styles.input}`} />
                                 <label
                                     htmlFor="id-b03"
                                     className={styles.inputLabel}
@@ -148,7 +148,7 @@ const TodoList = () => {
                                 <ErrorMessage name="name" component="div" className={styles.error} />
                             </div>
                             <div className="relative">
-                                <Field id="phone" type="text" name="phone" placeholder="Nom" className={`peer ${styles.input}`} />
+                                <Field id="phone" type="text" name="phone" placeholder="Nom" className={`${styles.input}`} />
                                 <label
                                     htmlFor="phone"
                                     className={styles.inputLabel}
@@ -158,7 +158,7 @@ const TodoList = () => {
                                 <ErrorMessage name="phone" component="div" className={styles.error} />
                             </div>
                             <div className="relative my-6">
-                                <Field id="email" type="text" name="email" placeholder="Nom" className={`peer ${styles.input}`} />
+                                <Field id="email" type="text" name="email" placeholder="Nom" className={`${styles.input}`} />
                                 <label
                                     htmlFor="email"
                                     className={styles.inputLabel}
@@ -171,7 +171,7 @@ const TodoList = () => {
                                 <Field id="task" type="text" name="task" placeholder="Nom" className={styles.input} />
                                 <label
                                     htmlFor="task"
-                                    className={`peer ${styles.inputLabel}`}
+                                    className={`${styles.inputLabel}`}
                                 >
                                     Tâche
                                 </label>
