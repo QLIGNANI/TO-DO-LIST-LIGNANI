@@ -136,7 +136,7 @@ const TodoList = () => {
                             </h3>
                         </header>
                         <div className="flex flex-col space-y-6">
-                            {/*      <!-- Input field --> */}
+
                             <div className="relative">
                                 <Field id="name" type="text" name="name" placeholder="Nom" className={`peer ${styles.input}`} />
                                 <label
