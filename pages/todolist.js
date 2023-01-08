@@ -78,18 +78,7 @@ const TodoList = () => {
             title: 'Tâche',
             accessor: 'task',
         },
-        {
-            title: 'Nom',
-            accessor: 'name',
-        },
-        {
-            title: 'Téléphone',
-            accessor: 'phone',
-        },
-        {
-            title: 'Email',
-            accessor: 'email',
-        },
+
         {
             title: 'Actions',
             accessor: 'actions',
@@ -114,9 +103,6 @@ const TodoList = () => {
         <Formik
             initialValues={currentTodo}
             validationSchema={Yup.object().shape({
-                name: Yup.string().required('Veuillez entrer le nom'),
-                phone: Yup.string().required('Veuillez entrer le numéro de téléphone'),
-                email: Yup.string().required('Veuillez entrer l\'email').email('Veuillez entrer un email valide'),
                 task: Yup.string().required('Veuillez entrer la tâche'),
             })}
             onSubmit={(values, { setSubmitting }) => {
@@ -136,37 +122,6 @@ const TodoList = () => {
                             </h3>
                         </header>
                         <div className="flex flex-col space-y-6">
-
-                            <div className="relative">
-                                <Field id="name" type="text" name="name" placeholder="Nom" className={`${styles.input}`} />
-                                <label
-                                    htmlFor="id-b03"
-                                    className={styles.inputLabel}
-                                >
-                                    Nom
-                                </label>
-                                <ErrorMessage name="name" component="div" className={styles.error} />
-                            </div>
-                            <div className="relative">
-                                <Field id="phone" type="text" name="phone" placeholder="Nom" className={`${styles.input}`} />
-                                <label
-                                    htmlFor="phone"
-                                    className={styles.inputLabel}
-                                >
-                                    Téléphone
-                                </label>
-                                <ErrorMessage name="phone" component="div" className={styles.error} />
-                            </div>
-                            <div className="relative my-6">
-                                <Field id="email" type="text" name="email" placeholder="Nom" className={`${styles.input}`} />
-                                <label
-                                    htmlFor="email"
-                                    className={styles.inputLabel}
-                                >
-                                    Email
-                                </label>
-                                <ErrorMessage name="email" component="div" className={styles.error} />
-                            </div>
                             <div className="relative my-6">
                                 <Field id="task" type="text" name="task" placeholder="Nom" className={styles.input} />
                                 <label
