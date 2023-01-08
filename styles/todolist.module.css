@@ -64,7 +64,7 @@
 }
 
 .error {
-  @apply text-red-700 text-sm py-2;
+  @apply text-red-500 text-sm py-2;
 }
 
 .buttonContainer {
