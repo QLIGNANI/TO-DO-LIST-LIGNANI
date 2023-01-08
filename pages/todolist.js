@@ -10,6 +10,7 @@ import Badge from '@/components/Badge';
 import EditIcon from '@/components/icons/EditIcon';
 import DeleteIcon from '@/components/icons/DeleteIcon';
 import dynamic from 'next/dynamic';
+import { Checkbox } from '@/components/checkbox';
 
 const Table = dynamic(() => import('components/Table'), { ssr: false });
 const Dialog = dynamic(() => import('components/Dialog'), { ssr: false });
@@ -78,18 +79,7 @@ const TodoList = () => {
             title: 'Tâche',
             accessor: 'task',
         },
-        {
-            title: 'Nom',
-            accessor: 'name',
-        },
-        {
-            title: 'Téléphone',
-            accessor: 'phone',
-        },
-        {
-            title: 'Email',
-            accessor: 'email',
-        },
+
         {
             title: 'Actions',
             accessor: 'actions',
@@ -114,9 +104,6 @@ const TodoList = () => {
         <Formik
             initialValues={currentTodo}
             validationSchema={Yup.object().shape({
-                name: Yup.string().required('Veuillez entrer le nom'),
-                phone: Yup.string().required('Veuillez entrer le numéro de téléphone'),
-                email: Yup.string().required('Veuillez entrer l\'email').email('Veuillez entrer un email valide'),
                 task: Yup.string().required('Veuillez entrer la tâche'),
             })}
             onSubmit={(values, { setSubmitting }) => {
@@ -136,42 +123,11 @@ const TodoList = () => {
                             </h3>
                         </header>
                         <div className="flex flex-col space-y-6">
-                            {/*      <!-- Input field --> */}
-                            <div className="relative">
-                                <Field id="name" type="text" name="name" placeholder="Nom" className={`peer ${styles.input}`} />
-                                <label
-                                    htmlFor="id-b03"
-                                    className={styles.inputLabel}
-                                >
-                                    Nom
-                                </label>
-                                <ErrorMessage name="name" component="div" className={styles.error} />
-                            </div>
-                            <div className="relative">
-                                <Field id="phone" type="text" name="phone" placeholder="Nom" className={`peer ${styles.input}`} />
-                                <label
-                                    htmlFor="phone"
-                                    className={styles.inputLabel}
-                                >
-                                    Téléphone
-                                </label>
-                                <ErrorMessage name="phone" component="div" className={styles.error} />
-                            </div>
-                            <div className="relative my-6">
-                                <Field id="email" type="text" name="email" placeholder="Nom" className={`peer ${styles.input}`} />
-                                <label
-                                    htmlFor="email"
-                                    className={styles.inputLabel}
-                                >
-                                    Email
-                                </label>
-                                <ErrorMessage name="email" component="div" className={styles.error} />
-                            </div>
                             <div className="relative my-6">
                                 <Field id="task" type="text" name="task" placeholder="Nom" className={styles.input} />
                                 <label
                                     htmlFor="task"
-                                    className={`peer ${styles.inputLabel}`}
+                                    className={`${styles.inputLabel}`}
                                 >
                                     Tâche
                                 </label>
@@ -179,7 +135,6 @@ const TodoList = () => {
                             </div>
                         </div>
                     </div>
-                    {/*  <!-- Action base sized basic button --> */}
                     <div className={styles.buttonContainer}>
                         <Button type="button" class={styles.cancelBtn} text="Annuler" onClick={() => onCloseModal({ clearForm: true })} />
 
@@ -211,12 +166,12 @@ const TodoList = () => {
             <header className={styles.header}>
                 <h3 className={styles.title}>Todo List</h3>
                 <Badge text={todos.length} alt="nombre de tâches" />
-                <Button class={`ml-auto ${styles.primaryBtn}`} type="button" onClick={onCloseModal} icon={<AddIcon />} text="Ajouter" />
             </header>
             <main className={styles.main}>
                 <div className={styles.card}>
                     <div className={`shadow-wuiSlate-200 ring-wuiSlate-20 ${styles.cardContent}`}>
                         <div className="w-full overflow-x-auto">
+                        <Button class={`d-inline-flex p-2 ${styles.primaryBtn}`} type="button" onClick={onCloseModal} icon={<AddIcon />} text="Ajouter" />
                             <Table {...{ columns, todos, handleCancelUpdate, handleSaveUpdate, isUpdating, currentTodo }} />
                         </div>
                     </div>
