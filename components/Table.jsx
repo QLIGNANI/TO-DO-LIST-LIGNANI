@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '@/components/forms/Button';
+import Button from '@/components/forms/Button.jsx';
 import styles from '@/styles/todolist.module.css'
 
 const Table = (props) => {
