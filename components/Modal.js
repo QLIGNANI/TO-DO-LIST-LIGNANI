@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import useOutsideClick from '@/hooks/useOutsideClick';
+import useOutsideClick from './useOutsideClick';
 import styles from '@/styles/todolist.module.css'
 
 const Modal = (props) => {
