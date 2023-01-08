@@ -180,6 +180,7 @@ const TodoList = () => {
                             </div>
                         </div>
                     </div>
+                    {/*  <!-- Action base sized basic button --> */}
                     <div className={styles.buttonContainer}>
                         <Button type="button" class={styles.cancelBtn} text="Annuler" onClick={() => onCloseModal({ clearForm: true })} />
 
@@ -211,12 +212,16 @@ const TodoList = () => {
             <header className={styles.header}>
                 <h3 className={styles.title}>Todo List</h3>
                 <Badge text={todos.length} alt="nombre de tâches" />
+                <Button class={`ml-auto ${styles.primaryBtn}`} type="button" onClick={onCloseModal} icon={<AddIcon />} text="Ajouter" />
             </header>
             <main className={styles.main}>
                 <div className={styles.card}>
                     <div className={`shadow-wuiSlate-200 ring-wuiSlate-20 ${styles.cardContent}`}>
                         <div className="w-full overflow-x-auto">
+<<<<<<< HEAD
                         <Button class={`d-inline-flex p-2 ${styles.primaryBtn}`} type="button" onClick={onCloseModal} icon={<AddIcon />} text="Ajouter" />
+=======
+>>>>>>> parent of d4250fd (Update Totolist)
                             <Table {...{ columns, todos, handleCancelUpdate, handleSaveUpdate, isUpdating, currentTodo }} />
                         </div>
                     </div>
