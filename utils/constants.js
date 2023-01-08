@@ -1,6 +1,6 @@
 const constants = {
-    enums: {},
-    type: {},
-};
+  enums: {},
+  type: {},
+}
 
-export default constants;
+export default constants

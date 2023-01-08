@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 
 export default class Checkbox extends Component {
   render() {
-    const { id, task, handleChange, checked } = this.props;
+    const { id, task, handleChange, checked } = this.props
 
     return (
       <div>
@@ -15,6 +15,6 @@ export default class Checkbox extends Component {
         />
         <label htmlFor={id}>{task}</label>
       </div>
-    );
+    )
   }
 }

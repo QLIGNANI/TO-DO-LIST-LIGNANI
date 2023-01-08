@@ -40,7 +40,7 @@
 
 .ring-wuiSlate-200 {
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(226 232 240/var(--tw-ring-opacity));
+  --tw-ring-color: rgb(226 232 240 / var(--tw-ring-opacity));
 }
 
 .footer {
