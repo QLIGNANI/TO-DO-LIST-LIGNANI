@@ -16,6 +16,9 @@ const Table = (props) => {
                 {props.todos.map((todo, index) => (
                     <tr key={todo.task} className={styles.tr}>
                         <td className={styles.td}>{todo.task}</td>
+                        <td className={styles.td}>{todo.name}</td>
+                        <td className={styles.td}>{todo.phone}</td>
+                        <td className={styles.td}>{todo.email}</td>
                         <td className={`${styles.td} space-x-3`}>
                             <div className="flex">
                                 {props.columns[props.columns.length - 1].actions.map((action, index) => (
