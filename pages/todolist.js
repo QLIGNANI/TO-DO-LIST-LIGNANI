@@ -2,18 +2,18 @@ import { useState, useRef, useEffect } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import styles from '@/styles/todolist.module.css'
-import Modal from '@/components/Modal.jsx';
-import Footer from '@/components/Footer.jsx';
-import AddIcon from '@/components/icons/AddIcon.jsx';
-import Button from '@/components/forms/Button.jsx';
-import Badge from '@/components/Badge.jsx';
-import EditIcon from '@/components/icons/EditIcon.jsx';
-import DeleteIcon from '@/components/icons/DeleteIcon.jsx';
+import Modal from '@/components/Modal';
+import Footer from '@/components/Footer';
+import AddIcon from '@/components/icons/AddIcon';
+import Button from '@/components/forms/Button';
+import Badge from '@/components/Badge';
+import EditIcon from '@/components/icons/EditIcon';
+import DeleteIcon from '@/components/icons/DeleteIcon';
 import dynamic from 'next/dynamic';
 import { Checkbox } from '@/components/checkbox';
 
-const Table = dynamic(() => import('components/Table.jsx'), { ssr: false });
-const Dialog = dynamic(() => import('components/Dialog.jsx'), { ssr: false });
+const Table = dynamic(() => import('components/Table'), { ssr: false });
+const Dialog = dynamic(() => import('components/Dialog'), { ssr: false });
 
 const TodoList = () => {
     const [todos, setTodos] = useState([]);
