@@ -215,7 +215,7 @@ const TodoList = () => {
                 <div className={styles.card}>
                     <div className={`shadow-wuiSlate-200 ring-wuiSlate-20 ${styles.cardContent}`}>
                         <div className="w-full overflow-x-auto">
-                        <Button class={`ml-auto ${styles.primaryBtn}`} type="button" onClick={onCloseModal} icon={<AddIcon />} text="Ajouter" />
+                        <Button class={`d-inline-flex p-2 ${styles.primaryBtn}`} type="button" onClick={onCloseModal} icon={<AddIcon />} text="Ajouter" />
                             <Table {...{ columns, todos, handleCancelUpdate, handleSaveUpdate, isUpdating, currentTodo }} />
                         </div>
                     </div>
