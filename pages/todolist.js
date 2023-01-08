@@ -10,6 +10,7 @@ import Badge from '@/components/Badge';
 import EditIcon from '@/components/icons/EditIcon';
 import DeleteIcon from '@/components/icons/DeleteIcon';
 import dynamic from 'next/dynamic';
+import { Checkbox } from '@/components/checkbox';
 
 const Table = dynamic(() => import('components/Table'), { ssr: false });
 const Dialog = dynamic(() => import('components/Dialog'), { ssr: false });
