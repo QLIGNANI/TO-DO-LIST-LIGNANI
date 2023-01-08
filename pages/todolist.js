@@ -10,7 +10,6 @@ import Badge from '@/components/Badge';
 import EditIcon from '@/components/icons/EditIcon';
 import DeleteIcon from '@/components/icons/DeleteIcon';
 import dynamic from 'next/dynamic';
-import { Checkbox } from '@/components/checkbox';
 
 const Table = dynamic(() => import('components/Table'), { ssr: false });
 const Dialog = dynamic(() => import('components/Dialog'), { ssr: false });
@@ -137,9 +136,9 @@ const TodoList = () => {
                             </h3>
                         </header>
                         <div className="flex flex-col space-y-6">
-
+                            {/*      <!-- Input field --> */}
                             <div className="relative">
-                                <Field id="name" type="text" name="name" placeholder="Nom" className={`${styles.input}`} />
+                                <Field id="name" type="text" name="name" placeholder="Nom" className={`peer ${styles.input}`} />
                                 <label
                                     htmlFor="id-b03"
                                     className={styles.inputLabel}
@@ -149,7 +148,7 @@ const TodoList = () => {
                                 <ErrorMessage name="name" component="div" className={styles.error} />
                             </div>
                             <div className="relative">
-                                <Field id="phone" type="text" name="phone" placeholder="Nom" className={`${styles.input}`} />
+                                <Field id="phone" type="text" name="phone" placeholder="Nom" className={`peer ${styles.input}`} />
                                 <label
                                     htmlFor="phone"
                                     className={styles.inputLabel}
@@ -159,7 +158,7 @@ const TodoList = () => {
                                 <ErrorMessage name="phone" component="div" className={styles.error} />
                             </div>
                             <div className="relative my-6">
-                                <Field id="email" type="text" name="email" placeholder="Nom" className={`${styles.input}`} />
+                                <Field id="email" type="text" name="email" placeholder="Nom" className={`peer ${styles.input}`} />
                                 <label
                                     htmlFor="email"
                                     className={styles.inputLabel}
@@ -172,7 +171,7 @@ const TodoList = () => {
                                 <Field id="task" type="text" name="task" placeholder="Nom" className={styles.input} />
                                 <label
                                     htmlFor="task"
-                                    className={`${styles.inputLabel}`}
+                                    className={`peer ${styles.inputLabel}`}
                                 >
                                     Tâche
                                 </label>
@@ -218,7 +217,6 @@ const TodoList = () => {
                 <div className={styles.card}>
                     <div className={`shadow-wuiSlate-200 ring-wuiSlate-20 ${styles.cardContent}`}>
                         <div className="w-full overflow-x-auto">
-                        <Button class={`d-inline-flex p-2 ${styles.primaryBtn}`} type="button" onClick={onCloseModal} icon={<AddIcon />} text="Ajouter" />
                             <Table {...{ columns, todos, handleCancelUpdate, handleSaveUpdate, isUpdating, currentTodo }} />
                         </div>
                     </div>

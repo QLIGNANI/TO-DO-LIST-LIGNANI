@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import useOutsideClick from './useOutsideClick';
+import useOutsideClick from '@/hooks/useOutsideClick';
 import styles from '@/styles/todolist.module.css'
 
 const Modal = (props) => {
@@ -9,6 +9,9 @@ const Modal = (props) => {
         if (isOpen) {
             setIsOpen(false);
 
+            setTimeout(() => {
+                if (props.isModalOpen) props.onClose();
+            }, 50);
         }
     };
 
@@ -17,7 +20,7 @@ const Modal = (props) => {
     return (
         <div
             className={`${styles.modalContainer}
-      ${isOpen ? 'bg-gray-700 backdrop-filter backdrop-blur-sm' : 'bg-transparent backdrop-filter backdrop-blur-none'}`}
+      ${isOpen ? 'bg-gray-900 backdrop-filter backdrop-blur-sm' : 'bg-transparent backdrop-filter backdrop-blur-none'}`}
         >
             <div
                 ref={modalRef}
