@@ -13,7 +13,7 @@ export default class Checkbox extends Component {
           onChange={handleChange}
           checked={checked}
         />
-        <label htmlFor={id}>{title}</label>
+        <label htmlFor={id}>{task}</label>
       </div>
     );
   }
