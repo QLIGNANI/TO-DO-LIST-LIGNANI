@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '@/styles/todolist.module.css'
-import Button from './forms/Button';
+import Button from './forms/Button.jsx';
 
 const Dialog = (props) => {
 
